@@ -3,20 +3,41 @@ import Column from '../layouts/Column.astro'
 import Layout from '../layouts/Layout.astro'
 import Row from '../layouts/Row.astro'
 import Widget from '../layouts/Widget.astro'
+import { Image } from 'astro:assets'
+import IconAttachFile from '../assets/i-attach-file.svg'
+import Avatar from '../assets/avatar.jpeg'
 ---
 
 <Layout>
   <Row class="h-30">
-    <Widget class="w-198 h-30 bg-[linear-gradient(90deg,#D4F24E_0%,#9BEDF8_100%)]"> I'm Zimoe , a UI Designer. </Widget>
-    <Widget class="w-96 h-30 bg-#EFF7F7"> View my resume here. </Widget>
+    <Widget class="w-198 h-30 bg-[linear-gradient(90deg,#D4F24E_0%,#9BEDF8_100%)] flex items-center gap-6">
+      <Image src={Avatar} alt="zimoe's avatar" class="w-18 h-18 b-rd-9" />
+      <p>I'm Zimoe , a UI Designer.</p>
+    </Widget>
+    <Widget class="w-96 h-30 bg-#EFF7F7 flex items-center gap-3">
+      <Image src={IconAttachFile} alt="zimoe's resume" class="w-10 h-10" />
+      <p>View my resume here.</p>
+    </Widget>
   </Row>
   <Row class="h-72.5">
-    <Widget class="w-147 h-72.5 row-2-3 bg-#EFF7F7"> 移动端项目 </Widget>
+    <Widget class="w-147 h-72.5 bg-#EFF7F7"> 移动端项目 </Widget>
     <Column class="w-70.5">
       <Widget class="w-70.5 h-46.5 bg-#EFF7F7" />
       <Widget class="w-70.5 h-20 bg-#D5F24F" />
     </Column>
-    <Widget class="w-70.5 h-72.5 bg-#9BEDF8"> 社交媒体 </Widget>
+    <Widget class="w-70.5 h-72.5 bg-#9BEDF8 flex justify-between">
+      <div class="grid cols-15-0.5-15 rows-15-15-15 grid-flow-col gap-8 w-full h-full px-6">
+        <a class="i-simple-icons-gmail inline-block w-15 h-15 c-white"></a>
+        <a class="i-simple-icons-twitter inline-block w-15 h-15 c-white"></a>
+        <a class="i-simple-icons-bluesky inline-block w-15 h-15 c-white"></a>
+
+        <div class="row-1-4 flex items-center"><div class="bg-white w-full h-45"></div></div>
+
+        <a class="i-simple-icons-dribbble inline-block w-15 h-15 c-white"></a>
+        <a class="i-simple-icons-behance inline-block w-15 h-15 c-white"></a>
+        <a class="i-simple-icons-behance inline-block w-15 h-15 c-white"></a>
+      </div>
+    </Widget>
   </Row>
   <Row class="h-70.5">
     <Widget class="w-56.4 h-70.5 bg-#FED133" />
