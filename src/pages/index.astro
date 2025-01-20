@@ -1,11 +1,25 @@
 ---
-import Welcome from '../components/Welcome.astro'
+import Column from '../layouts/Column.astro'
 import Layout from '../layouts/Layout.astro'
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Row from '../layouts/Row.astro'
+import Widget from '../layouts/Widget.astro'
 ---
 
 <Layout>
-  <Welcome />
+  <Row class="h-30">
+    <Widget class="w-198 h-30 bg-[linear-gradient(90deg,#D4F24E_0%,#9BEDF8_100%)]"> I'm Zimoe , a UI Designer. </Widget>
+    <Widget class="w-96 h-30 bg-#EFF7F7"> View my resume here. </Widget>
+  </Row>
+  <Row class="h-72.5">
+    <Widget class="w-147 h-72.5 row-2-3 bg-#EFF7F7"> 移动端项目 </Widget>
+    <Column class="w-70.5">
+      <Widget class="w-70.5 h-46.5 bg-#EFF7F7" />
+      <Widget class="w-70.5 h-20 bg-#D5F24F" />
+    </Column>
+    <Widget class="w-70.5 h-72.5 bg-#9BEDF8"> 社交媒体 </Widget>
+  </Row>
+  <Row class="h-70.5">
+    <Widget class="w-56.4 h-70.5 bg-#FED133" />
+    <Widget class="w-233.5 h-70.5 bg-#EFF7F7"> Web 端项目 </Widget>
+  </Row>
 </Layout>
