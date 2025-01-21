@@ -1,0 +1,56 @@
+---
+import { Image } from 'astro:assets'
+
+interface Props {
+  class: string
+  images: Array<ImageMetadata>
+}
+
+const { class: className, images } = Astro.props
+---
+
+<astro-carousel class="relative h-45 min-w-80" class:list={className}>
+  <div>
+    {
+      images.map((image, index) => (
+        <Image
+          src={image}
+          alt="A description of my image."
+          class="w-80 h-45 b-(4 white rd-3) absolute top-0 carousel-card transition-all-300 hover:transform-scale-110"
+          style={{ 'z-index': index, left: `-${index * 35}%` }}
+          data-index={index}
+        />
+      ))
+    }
+  </div>
+</astro-carousel>
+
+<script>
+  class Carousel extends HTMLElement {
+    connectedCallback() {
+      const cards = this.querySelectorAll('.carousel-card') as NodeListOf<HTMLElement>
+      cards.forEach((card) => {
+        card.addEventListener('mouseenter', (event) => {
+          if (!event.currentTarget) return
+          const target = event.currentTarget as HTMLElement
+          const cardIndex = Number.parseInt(target.getAttribute('data-index') as string)
+          handleMouseEnter(cardIndex, cards)
+        })
+      })
+
+      function handleMouseEnter(cardIndex: number, cards: NodeListOf<HTMLElement>) {
+        cards.forEach((card, index) => {
+          let zIndex = 0
+          if (index === cardIndex) {
+            zIndex = 999
+          } else {
+            zIndex = 999 - Math.abs(index - cardIndex)
+          }
+          card.style.zIndex = zIndex.toString()
+        })
+      }
+    }
+  }
+
+  customElements.define('astro-carousel', Carousel)
+</script>

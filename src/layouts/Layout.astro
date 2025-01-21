@@ -6,7 +6,7 @@ const { class: className } = Astro.props
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="w-full h-full">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -14,7 +14,9 @@ const { class: className } = Astro.props
     <meta name="generator" content={Astro.generator} />
     <title>Hey! I'm Zimoe</title>
   </head>
-  <body class="mx-a py-15 px-30 flex flex-col gap-10 justify-center bg-white contain-layout max-w-360 min-w-283.5">
+  <body
+    class="w-full h-full mx-a py-15 px-30 flex flex-col gap-10 justify-center bg-white contain-layout max-w-360 min-w-283.5"
+  >
     <PageHeader />
     <main class="flex flex-col gap-6" class:list={className}>
       <slot />
@@ -24,9 +26,43 @@ const { class: className } = Astro.props
 </html>
 
 <style>
-  html,
-  body {
-    width: 100%;
-    height: 100%;
+  <style > html {
+    font-size: 16px;
+  }
+
+  @media (max-height: 1440px) {
+    html {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-height: 1080px) {
+    html {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-height: 900px) {
+    html {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-height: 768px) {
+    html {
+      font-size: 13px;
+    }
+  }
+
+  @media (max-height: 720px) {
+    html {
+      font-size: 12px;
+    }
+  }
+
+  @media (max-height: 640px) {
+    html {
+      font-size: 10px;
+    }
   }
 </style>
