@@ -10,7 +10,9 @@ export default defineConfig({
     transformerDirectives(),
     transformerVariantGroup(),
   ],
-  safelist: [],
+  safelist: [
+    ...Array.from({ length: 4 }, (_, i) => `left--${i * 35}`),
+  ],
   theme: {
     colors: {
       /** 颜色/主题色 */

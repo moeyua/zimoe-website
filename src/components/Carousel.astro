@@ -17,7 +17,8 @@ const { class: className, images } = Astro.props
           src={image}
           alt="A description of my image."
           class="w-80 h-45 b-(4 white rd-3) absolute top-0 carousel-card transition-all-300 hover:transform-scale-110"
-          style={{ 'z-index': index, left: `-${index * 35}%` }}
+          class:list={[`z-${index}`, `left--${index * 35}`]}
+          un-shadow="[8px_0px_30px_-10px_rgba(155,237,248,0.50)]"
           data-index={index}
         />
       ))
@@ -31,7 +32,9 @@ const { class: className, images } = Astro.props
       const cards = this.querySelectorAll('.carousel-card') as NodeListOf<HTMLElement>
       cards.forEach((card) => {
         card.addEventListener('mouseenter', (event) => {
-          if (!event.currentTarget) return
+          if (!event.currentTarget) {
+            return
+          }
           const target = event.currentTarget as HTMLElement
           const cardIndex = Number.parseInt(target.getAttribute('data-index') as string)
           handleMouseEnter(cardIndex, cards)
