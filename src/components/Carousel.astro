@@ -4,20 +4,22 @@ import { Image } from 'astro:assets'
 interface Props {
   class: string
   images: Array<ImageMetadata>
+  size?: { width: number; height: number }
 }
 
-const { class: className, images } = Astro.props
+const { class: className, images, size = { width: 320, height: 180 } } = Astro.props
 ---
 
-<astro-carousel class="relative h-45 min-w-80" class:list={className}>
+<astro-carousel class="relative" class:list={className} style={`min-width: ${size.width}px; height: ${size.height}px;`}>
   <div>
     {
       images.map((image, index) => (
         <Image
           src={image}
           alt="A description of my image."
-          class="w-80 h-45 b-(4 white rd-3) absolute top-0 carousel-card transition-all-300 hover:transform-scale-110"
-          class:list={[`z-${index}`, `left--${index * 35}`]}
+          class="b-(4 white rd-3) absolute top-0 carousel-card transition-all-300 hover:transform-scale-110"
+          class:list={[`z-${index}`]}
+          style={`width: ${size.width}px; height: ${size.height}px; left: -${index * (size.width * 0.45)}px;`}
           un-shadow="[8px_0px_30px_-10px_rgba(155,237,248,0.50)]"
           data-index={index}
         />

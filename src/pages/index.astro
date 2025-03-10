@@ -4,9 +4,11 @@ import Layout from '../layouts/Layout.astro'
 import Row from '../layouts/Row.astro'
 import Widget from '../layouts/Widget.astro'
 import IconAttachFile from '../assets/icon/i-attach-file.svg'
-import Avatar from '../assets/avatar.jpeg'
 import Carousel from '../components/Carousel.astro'
+import Cat from '../assets/img/cat.png'
 import ArtPixel from '../assets/img/art-pixel.png'
+import MarketingIllustration1 from '../assets/img/marketing-illustration-1.png'
+import MarketingIllustration2 from '../assets/img/marketing-illustration-2.png'
 import FunnySchool from '../assets/img/funny-school.png'
 import GreenFinanceMonitor from '../assets/img/green-finance-monitor.png'
 import SmartPark from '../assets/img/smart-park.png'
@@ -16,7 +18,7 @@ import ThreeCimWatch from '../assets/img/3cim-watch.png'
 <Layout>
   <Row class="h-30">
     <Widget class="w-198 h-30 bg-[linear-gradient(90deg,#D4F24E_0%,#9BEDF8_100%)] flex items-center gap-6">
-      <img src={Avatar.src} alt="zimoe's avatar" class="w-18 h-18 b-rd-9" />
+      <!-- <img src={Avatar.src} alt="zimoe's avatar" class="w-18 h-18 b-rd-9" /> -->
       <p class="text-6">I'm Zimoe , a UI Designer.</p>
     </Widget>
     <Widget class="w-96 h-30 bg-#EFF7F7 flex items-center gap-3">
@@ -32,7 +34,16 @@ import ThreeCimWatch from '../assets/img/3cim-watch.png'
       </div>
     </Widget>
     <Column class="w-70.5">
-      <Widget class="w-70.5 h-46.5 bg-#EFF7F7" />
+      <Widget class="w-70.5 h-46.5 bg-#EFF7F7">
+        <div class="flex flex-col h-full justify-between">
+          <p>其他项目</p>
+          <Carousel
+            class="self-end"
+            images={[MarketingIllustration1, MarketingIllustration2]}
+            size={{ width: 136, height: 76 }}
+          />
+        </div>
+      </Widget>
       <Widget class="w-70.5 h-20 bg-#D5F24F" />
     </Column>
     <Widget class="w-70.5 h-72.5 bg-#9BEDF8 flex justify-between">
@@ -45,12 +56,13 @@ import ThreeCimWatch from '../assets/img/3cim-watch.png'
 
         <a class="i-simple-icons-dribbble inline-block w-15 h-15 c-white"></a>
         <a class="i-simple-icons-behance inline-block w-15 h-15 c-white"></a>
-        <a class="i-simple-icons-behance inline-block w-15 h-15 c-white"></a>
       </div>
     </Widget>
   </Row>
   <Row class="h-70.5">
-    <Widget class="w-56.4 h-70.5 bg-#FED133" />
+    <Widget class="w-56.4 h-70.5 bg-#FED133 flex justify-center items-center">
+      <img src={Cat.src} alt="zimoe's cat" class="w-56.25 h-49.25 b-rd-28" />
+    </Widget>
     <Widget class="w-233.5 h-70.5 bg-#EFF7F7 text-6">
       <div class="flex flex-col h-full justify-between">
         <p>Web 端项目</p>
