@@ -2,7 +2,7 @@
 import PageFooter from '../components/PageFooter.astro'
 import PageHeader from '../components/PageHeader.astro'
 
-const { class: className } = Astro.props
+const { class: className, title } = Astro.props
 ---
 
 <!doctype html>
@@ -17,7 +17,7 @@ const { class: className } = Astro.props
   <body
     class="w-full h-full mx-a py-15 px-30 flex flex-col gap-10 justify-center bg-white contain-layout max-w-360 min-w-283.5"
   >
-    <PageHeader />
+    <PageHeader title={title} />
     <main class="flex flex-col gap-6" class:list={className}>
       <slot />
     </main>

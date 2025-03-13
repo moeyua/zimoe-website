@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Widget from '../layouts/Widget.astro'
+
+export function getStaticPaths() {
+  return [
+    { params: { project: '绿色金融监控' } },
+    { params: { project: '智慧停车' } },
+    { params: { project: '3Cim手表' } },
+    { params: { project: '猫咪' } },
+    { params: { project: '像素艺术' } },
+    { params: { project: '营销插画1' } },
+    { params: { project: '营销插画2' } },
+  ]
+}
+
+const { project } = Astro.params
+---
+
+<Layout title={project} class="overflow-scroll scrollbar-hide">
+  <div class="flex flex-col gap-6">
+    <Widget class="w-full h-150 bg-#EFF7F7 text-6" />
+    <Widget class="w-full h-150 bg-#EFF7F7 text-6" />
+    <Widget class="w-full h-150 bg-#EFF7F7 text-6" />
+    <Widget class="w-full h-150 bg-#EFF7F7 text-6" />
+    <Widget class="w-full h-150 bg-#EFF7F7 text-6" />
+    <Widget class="w-full h-150 bg-#EFF7F7 text-6" />
+  </div>
+</Layout>

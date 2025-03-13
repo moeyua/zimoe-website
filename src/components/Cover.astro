@@ -1,0 +1,11 @@
+---
+import Image from 'astro/components/Image.astro'
+
+interface Props {
+  src: ImageMetadata
+  alt: string
+}
+const { src, alt } = Astro.props
+---
+
+<Image src={src} alt={alt} class="w-147 h-82.75 b-rd-3 cursor-pointer" />
