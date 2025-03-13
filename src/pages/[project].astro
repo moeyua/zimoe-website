@@ -2,28 +2,39 @@
 import Layout from '../layouts/Layout.astro'
 import Widget from '../layouts/Widget.astro'
 
+import NationalClimateCenter1 from '../assets/web/3cim/国家气候中心 01.png'
+import NationalClimateCenter2 from '../assets/web/3cim/国家气候中心 02.png'
+import NationalClimateCenter3 from '../assets/web/3cim/国家气候中心 03.png'
+import NationalClimateCenter4 from '../assets/web/3cim/国家气候中心 04.png'
+import NationalClimateCenter5 from '../assets/web/3cim/国家气候中心 05.png'
+import { Image } from 'astro:assets'
+
 export function getStaticPaths() {
+  const map = {
+    '3cim': [
+      NationalClimateCenter1,
+      NationalClimateCenter2,
+      NationalClimateCenter3,
+      NationalClimateCenter4,
+      NationalClimateCenter5,
+    ],
+  }
   return [
-    { params: { project: '绿色金融监控' } },
-    { params: { project: '智慧停车' } },
-    { params: { project: '3Cim手表' } },
-    { params: { project: '猫咪' } },
-    { params: { project: '像素艺术' } },
-    { params: { project: '营销插画1' } },
-    { params: { project: '营销插画2' } },
+    { params: { project: '3cim' }, props: { images: map['3cim'] } },
+    { params: { project: '宠物' }, props: { images: [] } },
+    { params: { project: '随机密码' }, props: { images: [] } },
+    { params: { project: '园区' }, props: { images: [] } },
+    { params: { project: '智枢' }, props: { images: [] } },
+    { params: { project: 'gfm' }, props: { images: [] } },
   ]
 }
 
 const { project } = Astro.params
+const { images } = Astro.props
 ---
 
 <Layout title={project} class="overflow-scroll scrollbar-hide">
   <div class="flex flex-col gap-6">
-    <Widget class="w-full h-150 bg-#EFF7F7 text-6" />
-    <Widget class="w-full h-150 bg-#EFF7F7 text-6" />
-    <Widget class="w-full h-150 bg-#EFF7F7 text-6" />
-    <Widget class="w-full h-150 bg-#EFF7F7 text-6" />
-    <Widget class="w-full h-150 bg-#EFF7F7 text-6" />
-    <Widget class="w-full h-150 bg-#EFF7F7 text-6" />
+    {images.map((src, index) => <Image src={src} alt={project} />)}
   </div>
 </Layout>
