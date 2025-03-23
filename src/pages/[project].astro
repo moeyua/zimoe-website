@@ -1,13 +1,51 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Widget from '../layouts/Widget.astro'
+import { Image } from 'astro:assets'
 
 import NationalClimateCenter1 from '../assets/web/3cim/国家气候中心 01.png'
 import NationalClimateCenter2 from '../assets/web/3cim/国家气候中心 02.png'
 import NationalClimateCenter3 from '../assets/web/3cim/国家气候中心 03.png'
 import NationalClimateCenter4 from '../assets/web/3cim/国家气候中心 04.png'
 import NationalClimateCenter5 from '../assets/web/3cim/国家气候中心 05.png'
-import { Image } from 'astro:assets'
+import School1 from '../assets/mobile/校园/乐哉校园1.png'
+import School2 from '../assets/mobile/校园/乐哉校园2.png'
+import School3 from '../assets/mobile/校园/乐哉校园3.png'
+import School4 from '../assets/mobile/校园/乐哉校园4.png'
+import School5 from '../assets/mobile/校园/乐哉校园5.png'
+import School6 from '../assets/mobile/校园/乐哉校园6.png'
+import School7 from '../assets/mobile/校园/乐哉校园7.png'
+import School8 from '../assets/mobile/校园/乐哉校园8.png'
+import School9 from '../assets/mobile/校园/乐哉校园9.png'
+import School10 from '../assets/mobile/校园/乐哉校园10.png'
+import School11 from '../assets/mobile/校园/乐哉校园11.png'
+import School12 from '../assets/mobile/校园/乐哉校园12.png'
+import School13 from '../assets/mobile/校园/乐哉校园13.png'
+import School14 from '../assets/mobile/校园/乐哉校园14.png'
+import School15 from '../assets/mobile/校园/乐哉校园15.png'
+import School16 from '../assets/mobile/校园/乐哉校园16.png'
+import School17 from '../assets/mobile/校园/乐哉校园17.png'
+import School18 from '../assets/mobile/校园/乐哉校园18.png'
+import School19 from '../assets/mobile/校园/乐哉校园19.png'
+import ArtPixel1 from '../assets/mobile/艺术/Art Pixel-1.png'
+import ArtPixel2 from '../assets/mobile/艺术/Art Pixel-2.png'
+import ArtPixel3 from '../assets/mobile/艺术/Art Pixel-3.png'
+import ArtPixel4 from '../assets/mobile/艺术/Art Pixel-4.png'
+import ArtPixel5 from '../assets/mobile/艺术/Art Pixel-5.png'
+import ArtPixel6 from '../assets/mobile/艺术/Art Pixel-6.png'
+import ArtPixel7 from '../assets/mobile/艺术/Art Pixel-7.png'
+import ArtPixel8 from '../assets/mobile/艺术/Art Pixel-8.png'
+import ArtPixel9 from '../assets/mobile/艺术/Art Pixel-9.png'
+import ArtPixel10 from '../assets/mobile/艺术/Art Pixel-10.png'
+import ArtPixel11 from '../assets/mobile/艺术/Art Pixel-11.png'
+import ArtPixel12 from '../assets/mobile/艺术/Art Pixel-12.png'
+import ArtPixel13 from '../assets/mobile/艺术/Art Pixel-13.png'
+import ArtPixel14 from '../assets/mobile/艺术/Art Pixel-14.png'
+import ArtPixel15 from '../assets/mobile/艺术/Art Pixel-15.png'
+import ArtPixel16 from '../assets/mobile/艺术/Art Pixel-16.png'
+import ArtPixel17 from '../assets/mobile/艺术/Art Pixel-17.png'
+import ArtPixel18 from '../assets/mobile/艺术/Art Pixel-18.png'
+import ArtPixel19 from '../assets/mobile/艺术/Art Pixel-19.png'
+import ArtPixel20 from '../assets/mobile/艺术/Art Pixel-20.png'
 
 export function getStaticPaths() {
   const map = {
@@ -26,6 +64,59 @@ export function getStaticPaths() {
     { params: { project: '园区' }, props: { images: [] } },
     { params: { project: '智枢' }, props: { images: [] } },
     { params: { project: 'gfm' }, props: { images: [] } },
+    {
+      params: { project: '乐哉校园' },
+      props: {
+        images: [
+          School1,
+          School2,
+          School3,
+          School4,
+          School5,
+          School6,
+          School7,
+          School8,
+          School9,
+          School10,
+          School11,
+          School12,
+          School13,
+          School14,
+          School15,
+          School16,
+          School17,
+          School18,
+          School19,
+        ],
+      },
+    },
+    {
+      params: { project: 'Art Pixel' },
+      props: {
+        images: [
+          ArtPixel1,
+          ArtPixel2,
+          ArtPixel3,
+          ArtPixel4,
+          ArtPixel5,
+          ArtPixel6,
+          ArtPixel7,
+          ArtPixel8,
+          ArtPixel9,
+          ArtPixel10,
+          ArtPixel11,
+          ArtPixel12,
+          ArtPixel13,
+          ArtPixel14,
+          ArtPixel15,
+          ArtPixel16,
+          ArtPixel17,
+          ArtPixel18,
+          ArtPixel19,
+          ArtPixel20,
+        ],
+      },
+    },
   ]
 }
 
