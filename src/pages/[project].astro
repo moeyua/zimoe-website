@@ -46,24 +46,89 @@ import ArtPixel17 from '../assets/mobile/艺术/Art Pixel-17.png'
 import ArtPixel18 from '../assets/mobile/艺术/Art Pixel-18.png'
 import ArtPixel19 from '../assets/mobile/艺术/Art Pixel-19.png'
 import ArtPixel20 from '../assets/mobile/艺术/Art Pixel-20.png'
+import PapiFeed1 from '../assets/web/宠物/PapiFeed-1.png'
+import PapiFeed2 from '../assets/web/宠物/PapiFeed-2.png'
+import PapiFeed3 from '../assets/web/宠物/PapiFeed-3.png'
+import PapiFeed4 from '../assets/web/宠物/PapiFeed-4.png'
+import PapiFeed5 from '../assets/web/宠物/PapiFeed-5.png'
+import PapiFeed6 from '../assets/web/宠物/PapiFeed-6.png'
+import PapiFeed7 from '../assets/web/宠物/PapiFeed-7.png'
+import PapiFeed8 from '../assets/web/宠物/PapiFeed-8.png'
+import PapiFeed9 from '../assets/web/宠物/PapiFeed-9.png'
+import PapiFeed10 from '../assets/web/宠物/PapiFeed-10.png'
+import GFM1 from '../assets/web/绿色和平/GFM 01.png'
+import GFM2 from '../assets/web/绿色和平/GFM 02.png'
+import GFM3 from '../assets/web/绿色和平/GFM 03.png'
+import GFM4 from '../assets/web/绿色和平/GFM 04.png'
+import 智枢1 from '../assets/web/智枢/智枢 01.png'
+import 智枢2 from '../assets/web/智枢/智枢 02.png'
+import 智枢3 from '../assets/web/智枢/智枢 03.png'
+import 智枢4 from '../assets/web/智枢/智枢 04.png'
+import 随机密码1 from '../assets/web/随机密码/密码生成器 01.png'
+import 随机密码2 from '../assets/web/随机密码/密码生成器 02.png'
+import 随机密码3 from '../assets/web/随机密码/密码生成器 03.png'
+import 随机密码4 from '../assets/web/随机密码/密码生成器 04.png'
+import 园区后台管理系统1 from '../assets/web/园区/园区后台管理系统-1.png'
+import 园区后台管理系统2 from '../assets/web/园区/园区后台管理系统-2.png'
+import 园区后台管理系统3 from '../assets/web/园区/园区后台管理系统-3.png'
+import 园区后台管理系统4 from '../assets/web/园区/园区后台管理系统-4.png'
+import 园区后台管理系统5 from '../assets/web/园区/园区后台管理系统-5.png'
+import 园区后台管理系统6 from '../assets/web/园区/园区后台管理系统-6.png'
+import 园区后台管理系统7 from '../assets/web/园区/园区后台管理系统-7.png'
+import 园区后台管理系统8 from '../assets/web/园区/园区后台管理系统-8.png'
+import 园区后台管理系统9 from '../assets/web/园区/园区后台管理系统-9.png'
 
 export function getStaticPaths() {
-  const map = {
-    '3cim': [
-      NationalClimateCenter1,
-      NationalClimateCenter2,
-      NationalClimateCenter3,
-      NationalClimateCenter4,
-      NationalClimateCenter5,
-    ],
-  }
   return [
-    { params: { project: '3cim' }, props: { images: map['3cim'] } },
-    { params: { project: '宠物' }, props: { images: [] } },
-    { params: { project: '随机密码' }, props: { images: [] } },
-    { params: { project: '园区' }, props: { images: [] } },
-    { params: { project: '智枢' }, props: { images: [] } },
-    { params: { project: 'gfm' }, props: { images: [] } },
+    {
+      params: { project: '3CIM' },
+      props: {
+        images: [
+          NationalClimateCenter1,
+          NationalClimateCenter2,
+          NationalClimateCenter3,
+          NationalClimateCenter4,
+          NationalClimateCenter5,
+        ],
+      },
+    },
+    {
+      params: { project: 'PapiFeed' },
+      props: {
+        images: [
+          PapiFeed1,
+          PapiFeed2,
+          PapiFeed3,
+          PapiFeed4,
+          PapiFeed5,
+          PapiFeed6,
+          PapiFeed7,
+          PapiFeed8,
+          PapiFeed9,
+          PapiFeed10,
+        ],
+        noGap: true,
+      },
+    },
+    { params: { project: '随机密码' }, props: { images: [随机密码1, 随机密码2, 随机密码3, 随机密码4] } },
+    {
+      params: { project: '园区后台管理系统' },
+      props: {
+        images: [
+          园区后台管理系统1,
+          园区后台管理系统2,
+          园区后台管理系统3,
+          园区后台管理系统4,
+          园区后台管理系统5,
+          园区后台管理系统6,
+          园区后台管理系统7,
+          园区后台管理系统8,
+          园区后台管理系统9,
+        ],
+      },
+    },
+    { params: { project: '智枢' }, props: { images: [智枢1, 智枢2, 智枢3, 智枢4] } },
+    { params: { project: '绿色和平' }, props: { images: [GFM1, GFM2, GFM3, GFM4] } },
     {
       params: { project: '乐哉校园' },
       props: {
@@ -120,12 +185,17 @@ export function getStaticPaths() {
   ]
 }
 
+interface Props {
+  images: ImageMetadata[]
+  noGap?: boolean
+}
+
 const { project } = Astro.params
-const { images } = Astro.props
+const { images, noGap } = Astro.props
 ---
 
 <Layout title={project} class="overflow-scroll scrollbar-hide">
-  <div class="flex flex-col gap-6">
+  <div class="flex flex-col" style={{ gap: noGap ? '0' : '1.5rem' }}>
     {images.map((src, index) => <Image src={src} alt={project} />)}
   </div>
 </Layout>
