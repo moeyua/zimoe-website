@@ -31,14 +31,19 @@ import 密码生成器 from '../assets/web/随机密码/密码生成器 01.png'
     <Widget class="w-147 h-72.5 bg-#EFF7F7 text-6">
       <a class="flex flex-col h-full justify-between" href="/mobile">
         <p>Mobile Projects</p>
-        <Carousel class="self-end" images={[乐哉校园, ArtPixel]} />
+        <Carousel class="self-end" reverseZIndex={true} images={[ArtPixel, 乐哉校园]} />
       </a>
     </Widget>
     <Column class="w-70.5">
       <Widget class="text-6 w-70.5 h-46.5 bg-#EFF7F7">
         <a class="flex flex-col h-full justify-between" href="/Other Projects">
           <p>Other Projects</p>
-          <Carousel class="self-end" images={[运营插画2, 运营插画3]} size={{ width: 136, height: 76 }} />
+          <Carousel
+            class="self-end"
+            reverseZIndex={true}
+            images={[运营插画3, 运营插画2]}
+            size={{ width: 136, height: 76 }}
+          />
         </a>
       </Widget>
       <Widget class="w-70.5 h-20 bg-#D5F24F" />
@@ -75,7 +80,7 @@ import 密码生成器 from '../assets/web/随机密码/密码生成器 01.png'
     <Widget class="w-233.5 h-70.5 bg-#EFF7F7 text-6">
       <a class="flex flex-col h-full justify-between" href="/web">
         <p>Web Projects</p>
-        <Carousel class="self-end" images={[密码生成器, 智枢, 绿色和平]} />
+        <Carousel class="self-end" reverseZIndex={true} images={[绿色和平, 智枢, 密码生成器]} />
       </a>
     </Widget>
   </Row>

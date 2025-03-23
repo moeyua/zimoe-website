@@ -5,9 +5,10 @@ interface Props {
   class: string
   images: Array<ImageMetadata>
   size?: { width: number; height: number }
+  reverseZIndex?: boolean
 }
 
-const { class: className, images, size = { width: 320, height: 180 } } = Astro.props
+const { class: className, images, size = { width: 320, height: 180 }, reverseZIndex = false } = Astro.props
 ---
 
 <astro-carousel class="relative" class:list={className} style={`min-width: ${size.width}px; height: ${size.height}px;`}>
@@ -18,7 +19,7 @@ const { class: className, images, size = { width: 320, height: 180 } } = Astro.p
           src={image}
           alt="A description of my image."
           class="b-(4 white rd-3) absolute top-0 carousel-card transition-all-300 hover:transform-scale-110"
-          class:list={[`z-${index}`]}
+          class:list={[`z-${reverseZIndex ? images.length - index : index}`]}
           style={`width: ${size.width}px; height: ${size.height}px; left: -${index * (size.width * 0.45)}px;`}
           un-shadow="[8px_0px_30px_-10px_rgba(155,237,248,0.50)]"
           data-index={index}

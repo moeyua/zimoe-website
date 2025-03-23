@@ -12,6 +12,7 @@ export default defineConfig({
   ],
   safelist: [
     ...Array.from({ length: 4 }, (_, i) => `left--${i * 35}`),
+    ...Array.from({ length: 10 }, (_, i) => `z-${i}`),
   ],
   theme: {
     colors: {
