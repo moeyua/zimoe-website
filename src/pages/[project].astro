@@ -77,6 +77,12 @@ import 园区后台管理系统6 from '../assets/web/园区/园区后台管理�
 import 园区后台管理系统7 from '../assets/web/园区/园区后台管理系统-7.png'
 import 园区后台管理系统8 from '../assets/web/园区/园区后台管理系统-8.png'
 import 园区后台管理系统9 from '../assets/web/园区/园区后台管理系统-9.png'
+import 运营插画1 from '../assets/others/运营插画1.png'
+import 运营插画2 from '../assets/others/运营插画2.png'
+import 运营插画3 from '../assets/others/运营插画3.png'
+import 运营插画4 from '../assets/others/运营插画4.png'
+import 运营插画5 from '../assets/others/运营插画5.png'
+import 运营插画6 from '../assets/others/运营插画6.png'
 
 export function getStaticPaths() {
   return [
@@ -180,6 +186,13 @@ export function getStaticPaths() {
           ArtPixel19,
           ArtPixel20,
         ],
+      },
+    },
+    {
+      params: { project: 'Other Projects' },
+      props: {
+        images: [运营插画1, 运营插画2, 运营插画3, 运营插画4, 运营插画5, 运营插画6],
+        size: { width: 136, height: 76 },
       },
     },
   ]
