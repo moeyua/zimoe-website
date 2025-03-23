@@ -6,13 +6,14 @@ import Widget from '../layouts/Widget.astro'
 import IconAttachFile from '../assets/icon/i-attach-file.svg'
 import Carousel from '../components/Carousel.astro'
 import Cat from '../assets/img/cat.png'
-import ArtPixel from '../assets/img/art-pixel.png'
-import MarketingIllustration1 from '../assets/img/marketing-illustration-1.png'
-import MarketingIllustration2 from '../assets/img/marketing-illustration-2.png'
-import FunnySchool from '../assets/img/funny-school.png'
-import GreenFinanceMonitor from '../assets/img/green-finance-monitor.png'
-import SmartPark from '../assets/img/smart-park.png'
-import ThreeCimWatch from '../assets/img/3cim-watch.png'
+
+import 运营插画2 from '../assets/others/运营插画2.png'
+import 运营插画3 from '../assets/others/运营插画3.png'
+import 乐哉校园 from '../assets/mobile/校园/乐哉校园1.png'
+import ArtPixel from '../assets/mobile/艺术/Art Pixel-1.png'
+import 绿色和平 from '../assets/web/绿色和平/GFM 01.png'
+import 智枢 from '../assets/web/智枢/智枢 01.png'
+import 密码生成器 from '../assets/web/随机密码/密码生成器 01.png'
 ---
 
 <Layout title="Hey!">
@@ -30,18 +31,14 @@ import ThreeCimWatch from '../assets/img/3cim-watch.png'
     <Widget class="w-147 h-72.5 bg-#EFF7F7 text-6">
       <a class="flex flex-col h-full justify-between" href="/mobile">
         <p>Mobile Projects</p>
-        <Carousel class="self-end" images={[FunnySchool, ArtPixel]} />
+        <Carousel class="self-end" images={[乐哉校园, ArtPixel]} />
       </a>
     </Widget>
     <Column class="w-70.5">
       <Widget class="text-6 w-70.5 h-46.5 bg-#EFF7F7">
         <a class="flex flex-col h-full justify-between" href="/Other Projects">
           <p>Other Projects</p>
-          <Carousel
-            class="self-end"
-            images={[MarketingIllustration1, MarketingIllustration2]}
-            size={{ width: 136, height: 76 }}
-          />
+          <Carousel class="self-end" images={[运营插画2, 运营插画3]} size={{ width: 136, height: 76 }} />
         </a>
       </Widget>
       <Widget class="w-70.5 h-20 bg-#D5F24F" />
@@ -78,7 +75,7 @@ import ThreeCimWatch from '../assets/img/3cim-watch.png'
     <Widget class="w-233.5 h-70.5 bg-#EFF7F7 text-6">
       <a class="flex flex-col h-full justify-between" href="/web">
         <p>Web Projects</p>
-        <Carousel class="self-end" images={[SmartPark, ThreeCimWatch, GreenFinanceMonitor]} />
+        <Carousel class="self-end" images={[密码生成器, 智枢, 绿色和平]} />
       </a>
     </Widget>
   </Row>
